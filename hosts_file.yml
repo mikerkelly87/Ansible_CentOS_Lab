@@ -1,0 +1,20 @@
+---
+- name: Add lab-guest01 to lab-ansible Hosts File
+  lineinfile:
+    path: /var/lib/lxc/lab-ansible/rootfs/etc/hosts
+    line: '10.0.1.51 lab-guest01'
+  
+- name: Add lab-guest02 to lab-ansible Hosts File
+  lineinfile:
+    path: /var/lib/lxc/lab-ansible/rootfs/etc/hosts
+    line: '10.0.1.52 lab-guest02'
+  
+- name: Add lab-guest03 to lab-ansible Hosts File
+  lineinfile:
+    path: /var/lib/lxc/lab-ansible/rootfs/etc/hosts
+    line: '10.0.1.53 lab-guest03'
+  
+- name: Add lab-guest04 to lab-ansible Hosts File
+  lineinfile:
+    path: /var/lib/lxc/lab-ansible/rootfs/etc/hosts
+    line: '10.0.1.54 lab-guest04'

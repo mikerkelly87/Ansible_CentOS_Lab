@@ -1,0 +1,35 @@
+---
+- name: Setup The lab-ansible network Script
+  vars:
+    ipaddr: 10.0.1.50
+  template:
+    src: ./ifcfg-eth0.j2
+    dest: /var/lib/lxc/lab-ansible/rootfs/etc/sysconfig/network-scripts/ifcfg-eth0
+
+- name: Setup The lab-guest01 network Script
+  vars:
+    ipaddr: 10.0.1.51
+  template:
+    src: ./ifcfg-eth0.j2
+    dest: /var/lib/lxc/lab-guest01/rootfs/etc/sysconfig/network-scripts/ifcfg-eth0
+
+- name: Setup The lab-guest02 network Script
+  vars:
+    ipaddr: 10.0.1.52
+  template:
+    src: ./ifcfg-eth0.j2
+    dest: /var/lib/lxc/lab-guest02/rootfs/etc/sysconfig/network-scripts/ifcfg-eth0
+
+- name: Setup The lab-guest03 network Script
+  vars:
+    ipaddr: 10.0.1.53
+  template:
+    src: ./ifcfg-eth0.j2
+    dest: /var/lib/lxc/lab-guest03/rootfs/etc/sysconfig/network-scripts/ifcfg-eth0
+
+- name: Setup The lab-guest04 network Script
+  vars:
+    ipaddr: 10.0.1.54
+  template:
+    src: ./ifcfg-eth0.j2
+    dest: /var/lib/lxc/lab-guest04/rootfs/etc/sysconfig/network-scripts/ifcfg-eth0

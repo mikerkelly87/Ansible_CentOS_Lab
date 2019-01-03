@@ -1,0 +1,25 @@
+---
+- name: Restart lab-ansible container
+  lxc_container:
+    name: lab-ansible
+    state: restarted
+
+- name: Restart lab-guest01 container
+  lxc_container:
+    name: lab-guest01
+    state: restarted
+
+- name: Restart lab-guest02 container
+  lxc_container:
+    name: lab-guest02
+    state: restarted
+
+- name: Restart lab-guest03 container
+  lxc_container:
+    name: lab-guest03
+    state: restarted
+
+- name: Restart lab-guest04 container
+  lxc_container:
+    name: lab-guest04
+    state: restarted

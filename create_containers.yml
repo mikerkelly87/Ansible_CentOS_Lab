@@ -1,0 +1,40 @@
+---
+- name: Create The lab-ansible Container
+  lxc_container:
+    name: lab-ansible
+    container_log: true
+    template: centos
+    template_options: --release 7
+    state: started
+
+- name: Create The lab-guest01 Container
+  lxc_container:
+    name: lab-guest01
+    container_log: true
+    template: centos
+    template_options: --release 7
+    state: started
+
+- name: Create The lab-guest02 Container
+  lxc_container:
+    name: lab-guest02
+    container_log: true
+    template: centos
+    template_options: --release 7
+    state: started
+
+- name: Create The lab-guest03 Container
+  lxc_container:
+    name: lab-guest03
+    container_log: true
+    template: centos
+    template_options: --release 7
+    state: started
+
+- name: Create The lab-guest04 Container
+  lxc_container:
+    name: lab-guest04
+    container_log: true
+    template: centos
+    template_options: --release 7
+    state: started

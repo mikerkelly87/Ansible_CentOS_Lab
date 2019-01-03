@@ -1,0 +1,88 @@
+---
+- name: Create SSH Directory on lab-ansible
+  file:
+    path: /var/lib/lxc/lab-ansible/rootfs/root/.ssh
+    state: directory
+    owner: root
+    group: root
+    mode: 0700
+
+- name: Create SSH Directory on lab-guest01
+  file:
+    path: /var/lib/lxc/lab-guest01/rootfs/root/.ssh
+    state: directory
+    owner: root
+    group: root
+    mode: 0700
+
+- name: Create SSH Directory on lab-guest02
+  file:
+    path: /var/lib/lxc/lab-guest02/rootfs/root/.ssh
+    state: directory
+    owner: root
+    group: root
+    mode: 0700
+
+- name: Create SSH Directory on lab-guest03
+  file:
+    path: /var/lib/lxc/lab-guest03/rootfs/root/.ssh
+    state: directory
+    owner: root
+    group: root
+    mode: 0700
+
+- name: Create SSH Directory on lab-guest04
+  file:
+    path: /var/lib/lxc/lab-guest04/rootfs/root/.ssh
+    state: directory
+    owner: root
+    group: root
+    mode: 0700
+
+- name: Copy SSH Private Key to lab-ansible
+  copy:
+    src: ./id_rsa
+    dest: /var/lib/lxc/lab-ansible/rootfs/root/.ssh/id_rsa
+    owner: root
+    group: root
+    mode: 0600
+
+- name: Copy SSH Public Key to lab-ansible
+  copy:
+    src: ./id_rsa.pub
+    dest: /var/lib/lxc/lab-ansible/rootfs/root/.ssh/id_rsa.pub
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Add authorized_keys to lab-guest01
+  copy:
+    src: ./authorized_keys
+    dest: /var/lib/lxc/lab-guest01/rootfs/root/.ssh/authorized_keys
+    owner: root
+    group: root
+    mode: 0600
+
+- name: Add authorized_keys to lab-guest02
+  copy:
+    src: ./authorized_keys
+    dest: /var/lib/lxc/lab-guest02/rootfs/root/.ssh/authorized_keys
+    owner: root
+    group: root
+    mode: 0600
+
+- name: Add authorized_keys to lab-guest03
+  copy:
+    src: ./authorized_keys
+    dest: /var/lib/lxc/lab-guest03/rootfs/root/.ssh/authorized_keys
+    owner: root
+    group: root
+    mode: 0600
+
+- name: Add authorized_keys to lab-guest01
+  copy:
+    src: ./authorized_keys
+    dest: /var/lib/lxc/lab-guest04/rootfs/root/.ssh/authorized_keys
+    owner: root
+    group: root
+    mode: 0600

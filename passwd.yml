@@ -1,0 +1,15 @@
+---
+- name: Set A Root Password on lab-ansible
+  shell: chroot /var/lib/lxc/lab-ansible/rootfs/ /bin/bash -c "echo 'password123' | passwd --stdin root"
+
+- name: Set A Root Password on lab-guest01
+  shell: chroot /var/lib/lxc/lab-guest01/rootfs/ /bin/bash -c "echo 'password123' | passwd --stdin root"
+
+- name: Set A Root Password on lab-guest02
+  shell: chroot /var/lib/lxc/lab-guest02/rootfs/ /bin/bash -c "echo 'password123' | passwd --stdin root"
+
+- name: Set A Root Password on lab-guest03
+  shell: chroot /var/lib/lxc/lab-guest03/rootfs/ /bin/bash -c "echo 'password123' | passwd --stdin root"
+
+- name: Set A Root Password on lab-guest04
+  shell: chroot /var/lib/lxc/lab-guest04/rootfs/ /bin/bash -c "echo 'password123' | passwd --stdin root" 
