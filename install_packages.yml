@@ -1,24 +1,40 @@
 ---
 - name: Install pip
-  apt:
+  yum:
     name: python-pip
-    update_cache: yes
+    state: latest
+
+- name: Install epel
+  yum:
+    name: epel-release
+    state: latest
+
+- name: Install LXC Base Package
+  yum:
+    name: lxc
+    state: latest
 
 - name: Install LXC Dev Package
-  apt:
-    name: lxc-dev
-    update_cache: yes
+  yum:
+    name: lxc-devel
+    state: latest
+
+- name: Install Python Dev Package
+  yum:
+    name: python-devel
+    state: latest
+
+- name: Install gcc Package
+  yum:
+    name: gcc
+    state: latest
 
 - name: Install LXC pip module
   pip:
     name: lxc-python2
 
 - name: Install LXC CLI Tools
-  apt:
-    name: lxc1
-    update_cache: yes
+  yum:
+    name: lxc-extra
+    state: latest
 
-- name: Install yum
-  apt:
-    name: yum
-    update_cache: yes
