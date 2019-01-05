@@ -43,8 +43,17 @@
     name: lxc-templates
     state: latest
 
-#- name: Install libvirt
-#  yum:
-#    name: libvirt
-#    state: latest
+- name: Install libvirt
+  yum:
+    name: libvirt
+    state: latest
 
+- name: Start libvirt Service
+  service:
+    name: libvirtd
+    state: started
+
+- name: Enable libvirtd Service on Boot
+  service:
+    name: libvirtd
+    enabled: yes
