@@ -1,12 +1,12 @@
 ---
-- name: Install pip
-  yum:
-    name: python-pip
-    state: latest
-
 - name: Install epel
   yum:
     name: epel-release
+    state: latest
+
+- name: Install pip
+  yum:
+    name: python-pip
     state: latest
 
 - name: Install LXC Base Package
@@ -37,4 +37,14 @@
   yum:
     name: lxc-extra
     state: latest
+
+- name: Install LXC Templates
+  yum:
+    name: lxc-templates
+    state: latest
+
+#- name: Install libvirt
+#  yum:
+#    name: libvirt
+#    state: latest
 
