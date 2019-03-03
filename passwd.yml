@@ -1,15 +1,20 @@
 ---
 - name: Set A Root Password on lab-ansible
-  shell: chroot /var/lib/lxc/lab-ansible/rootfs/ /bin/bash -c "echo root:password123 | chpasswd"
+#  shell: chroot /var/lib/lxc/lab-ansible/rootfs/ /bin/bash -c "echo root:password123 | chpasswd"
+  shell: sed -i -e '0,/*/ s/*/$6$xMVZD5Or$ctDafmwzl3ST2FjbtQP432XYqAEMUmD\/VOtTYJXu7cVc4en.SRX0r7Wu2Ku7ilkQimpd2H2RzEg\/8fSyJVJ8J1/' /var/lib/lxc/lab-ansible/rootfs/etc/shadow
 
 - name: Set A Root Password on lab-guest01
-  shell: chroot /var/lib/lxc/lab-guest01/rootfs/ /bin/bash -c "echo root:password123 | chpasswd"
+#  shell: chroot /var/lib/lxc/lab-guest01/rootfs/ /bin/bash -c "echo root:password123 | chpasswd"
+  shell: sed -i -e '0,/*/ s/*/$6$xMVZD5Or$ctDafmwzl3ST2FjbtQP432XYqAEMUmD\/VOtTYJXu7cVc4en.SRX0r7Wu2Ku7ilkQimpd2H2RzEg\/8fSyJVJ8J1/' /var/lib/lxc/lab-guest01/rootfs/etc/shadow
 
 - name: Set A Root Password on lab-guest02
-  shell: chroot /var/lib/lxc/lab-guest02/rootfs/ /bin/bash -c "echo root:password123 | chpasswd"
+#  shell: chroot /var/lib/lxc/lab-guest02/rootfs/ /bin/bash -c "echo root:password123 | chpasswd"
+  shell: sed -i -e '0,/*/ s/*/$6$xMVZD5Or$ctDafmwzl3ST2FjbtQP432XYqAEMUmD\/VOtTYJXu7cVc4en.SRX0r7Wu2Ku7ilkQimpd2H2RzEg\/8fSyJVJ8J1/' /var/lib/lxc/lab-guest02/rootfs/etc/shadow
 
 - name: Set A Root Password on lab-guest03
-  shell: chroot /var/lib/lxc/lab-guest03/rootfs/ /bin/bash -c "echo root:password123 | chpasswd"
+#  shell: chroot /var/lib/lxc/lab-guest03/rootfs/ /bin/bash -c "echo root:password123 | chpasswd"
+  shell: sed -i -e '0,/*/ s/*/$6$xMVZD5Or$ctDafmwzl3ST2FjbtQP432XYqAEMUmD\/VOtTYJXu7cVc4en.SRX0r7Wu2Ku7ilkQimpd2H2RzEg\/8fSyJVJ8J1/' /var/lib/lxc/lab-guest03/rootfs/etc/shadow
 
 - name: Set A Root Password on lab-guest04
-  shell: chroot /var/lib/lxc/lab-guest04/rootfs/ /bin/bash -c "echo root:password123 | chpasswd" 
+#  shell: chroot /var/lib/lxc/lab-guest04/rootfs/ /bin/bash -c "echo root:password123 | chpasswd" 
+  shell: sed -i -e '0,/*/ s/*/$6$xMVZD5Or$ctDafmwzl3ST2FjbtQP432XYqAEMUmD\/VOtTYJXu7cVc4en.SRX0r7Wu2Ku7ilkQimpd2H2RzEg\/8fSyJVJ8J1/' /var/lib/lxc/lab-guest04/rootfs/etc/shadow
