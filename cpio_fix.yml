@@ -1,0 +1,58 @@
+---
+# This was require to install httpd in the containers
+# https://txlab.wordpress.com/2017/04/26/cpio-cap_set_file-error-when-installing-httpd-rpm-inside-an-lxc-container/
+- name: Fix cpio on lab-ansible
+  lineinfile:
+    path: /var/lib/lxc/lab-ansible/config
+    line: "{{ item.line }}"
+  with_items:
+    - { line: '# flush all defined drops and define a new list' }
+    - { line: 'lxc.cap.drop =' }
+    - { line: 'lxc.cap.drop = mac_admin mac_override setpcap' }
+    - { line: 'lxc.cap.drop = sys_module sys_nice sys_pacct' }
+    - { line: 'lxc.cap.drop = sys_rawio sys_time' }
+
+- name: Fix cpio on lab-guest01
+  lineinfile:
+    path: /var/lib/lxc/lab-guest01/config
+    line: "{{ item.line }}"
+  with_items:
+    - { line: '# flush all defined drops and define a new list' }
+    - { line: 'lxc.cap.drop =' }
+    - { line: 'lxc.cap.drop = mac_admin mac_override setpcap' }
+    - { line: 'lxc.cap.drop = sys_module sys_nice sys_pacct' }
+    - { line: 'lxc.cap.drop = sys_rawio sys_time' }
+
+- name: Fix cpio on lab-guest02
+  lineinfile:
+    path: /var/lib/lxc/lab-guest02/config
+    line: "{{ item.line }}"
+  with_items:
+    - { line: '# flush all defined drops and define a new list' }
+    - { line: 'lxc.cap.drop =' }
+    - { line: 'lxc.cap.drop = mac_admin mac_override setpcap' }
+    - { line: 'lxc.cap.drop = sys_module sys_nice sys_pacct' }
+    - { line: 'lxc.cap.drop = sys_rawio sys_time' }
+
+- name: Fix cpio on lab-guest03
+  lineinfile:
+    path: /var/lib/lxc/lab-guest03/config
+    line: "{{ item.line }}"
+  with_items:
+    - { line: '# flush all defined drops and define a new list' }
+    - { line: 'lxc.cap.drop =' }
+    - { line: 'lxc.cap.drop = mac_admin mac_override setpcap' }
+    - { line: 'lxc.cap.drop = sys_module sys_nice sys_pacct' }
+    - { line: 'lxc.cap.drop = sys_rawio sys_time' }
+
+- name: Fix cpio on lab-guest04
+  lineinfile:
+    path: /var/lib/lxc/lab-guest04/config
+    line: "{{ item.line }}"
+  with_items:
+    - { line: '# flush all defined drops and define a new list' }
+    - { line: 'lxc.cap.drop =' }
+    - { line: 'lxc.cap.drop = mac_admin mac_override setpcap' }
+    - { line: 'lxc.cap.drop = sys_module sys_nice sys_pacct' }
+    - { line: 'lxc.cap.drop = sys_rawio sys_time' }
+
